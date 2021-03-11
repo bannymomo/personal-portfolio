@@ -42,6 +42,7 @@ filterBtns.forEach((btn) => {
 const lightbox = document.querySelector(".lightbox");
 const lightboxImg = lightbox.querySelector(".lightbox-img");
 const lightboxText = lightbox.querySelector(".caption-text");
+const lightboxLink = lightbox.querySelector("a");
 let itemIndex;
 
 selectZoomItems.forEach((item, index) => {
@@ -60,6 +61,10 @@ const changeItem = () => {
   lightboxText.innerHTML = selectZoomItems[itemIndex].querySelector(
     "h4"
   ).innerHTML;
+  lightboxLink.setAttribute(
+    "href",
+    selectZoomItems[itemIndex].getAttribute("data-link")
+  );
 };
 
 const toggleLigthbox = () => {
